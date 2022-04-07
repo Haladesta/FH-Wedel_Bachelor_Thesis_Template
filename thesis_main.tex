@@ -1,0 +1,45 @@
+\input{stuff/header}
+
+\begin{document}
+
+\pagenumbering{Roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Titelseite
+\newgeometry{left=3cm,right=2cm,top=2.0cm,bottom=2.0cm}
+\include{stuff/titelseite}
+\restoregeometry
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mehr Platz für Nummerierung benötigt in Verzeichnissen, wenn ein Kapitel 10 oder mehr Bilder hat
+\DeclareTOCStyleEntry[numwidth=3em]{tocline}{figure} % Für Abbildungsverzeichnis
+%\DeclareTOCStyleEntry[numwidth=3em]{tocline}{table} % Für Tabellenverzeichnis
+
+\tableofcontents
+\listoffigures
+\listoftables
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{arabic}
+
+\begin{onehalfspace}
+\include{kapitel/Abstract}
+\include{kapitel/Einleitung}
+\include{kapitel/Grundlagen}
+\include{kapitel/Hauptkapitel_1}
+\include{kapitel/Hauptkapitel_2}
+\include{kapitel/Zusammenfassung}
+\include{kapitel/Anhang}
+\end{onehalfspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\printbibliography{} % create with BibTeX
+
+\include{stuff/footer}
+
+\end{document}
